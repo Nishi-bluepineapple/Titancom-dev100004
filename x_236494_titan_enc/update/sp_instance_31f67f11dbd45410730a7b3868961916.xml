@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">b5b8a755db945410730a7b3868961957</sp_column>
+        <sp_widget display_value="Titan Knowledge Search">12b63711dbd45410730a7b38689619b4</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>neel</sys_created_by>
+        <sys_created_on>2020-04-20 08:36:44</sys_created_on>
+        <sys_id>31f67f11dbd45410730a7b3868961916</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Search our content</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_instance_31f67f11dbd45410730a7b3868961916</sys_update_name>
+        <sys_updated_by>neel</sys_updated_by>
+        <sys_updated_on>2020-04-20 08:38:22</sys_updated_on>
+        <title>Search our content</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"placeholder": {
+		"value": "",
+		"displayValue": ""
+	},
+	"allow_empty_search": {
+		"value": "",
+		"displayValue": ""
+	},
+	"min_search_char": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=31f67f11dbd45410730a7b3868961916"/>
+</record_update>

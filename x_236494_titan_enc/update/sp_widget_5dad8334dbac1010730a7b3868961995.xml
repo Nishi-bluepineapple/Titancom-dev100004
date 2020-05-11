@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope,$scope,$document,spUtil,spModal) {
+	/* widget controller */
+	var c = this;
+	
+	$scope.$on("menuSelected",function(event,data){
+		$rootScope.$broadcast("menuSelectedFromRoot",data);
+	});
+
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.products ul{&#13;
+	margin:0;&#13;
+  padding: 0px;&#13;
+}&#13;
+.products ul li{&#13;
+  list-style:none;&#13;
+  padding: 6px 0px;&#13;
+  //border-bottom: 1px solid rgba(100,100,100,0.3);&#13;
+}&#13;
+&#13;
+.products ul li a, .productsli{&#13;
+	color: #000;&#13;
+  text-decoration:none;&#13;
+  font-size: 1.3em;&#13;
+}&#13;
+.productsli{&#13;
+  font-weight:800;&#13;
+  font-size: 1.5em;&#13;
+}&#13;
+&#13;
+//----------products------------&#13;
+.card-image-size{&#13;
+  width: 200px;&#13;
+  height: 200px;&#13;
+}&#13;
+.center-align{&#13;
+	text-align:center;&#13;
+}&#13;
+.card-watch-title{&#13;
+  font-weight: 700;&#13;
+  font-size: 1.5rem;&#13;
+  text-align:center;&#13;
+  text-transform: uppercase;&#13;
+}&#13;
+.card-watch-price{&#13;
+  font-size: 1.5rem;&#13;
+  text-align:center;&#13;
+}&#13;
+.card-badge{&#13;
+  padding: 3px 6px;&#13;
+  border:none;&#13;
+  border-radius:0;&#13;
+  font-weight:200;&#13;
+  background-color: #666666;&#13;
+}&#13;
+.nocostemi{&#13;
+	width:77px;&#13;
+  height:21px;&#13;
+}&#13;
+.padding-top-bottom{&#13;
+    padding: 3px 0;&#13;
+}&#13;
+.margin-top-bottom{&#13;
+    margin: 2px 0;&#13;
+}&#13;
+.block-ellipsis {&#13;
+  display: block;&#13;
+  display: -webkit-box;&#13;
+  max-width: 100%;&#13;
+  height: 34px;&#13;
+  margin: 0 auto;&#13;
+  font-size: 14px;&#13;
+  line-height: 1;&#13;
+  -webkit-line-clamp: 2;&#13;
+  -webkit-box-orient: vertical;&#13;
+  overflow: hidden;&#13;
+  text-overflow: ellipsis;&#13;
+}&#13;
+.card-product-old-price{&#13;
+  text-decoration: line-through;&#13;
+      font-weight: 100;&#13;
+    color: gray;&#13;
+}&#13;
+&#13;
+@media only screen and (min-width: 768px and max-width: 991px) {&#13;
+&#13;
+}&#13;
+@media only screen and (min-width: 992px) {&#13;
+&#13;
+}&#13;
+//------------------Detail page css&#13;
+.detail-image-size{&#13;
+  width: 400px;&#13;
+  height: 400px;&#13;
+}&#13;
+.product-detailname{&#13;
+  font-weight:600;&#13;
+      font-size: 1.5rem;&#13;
+  padding-top: 12px;&#13;
+}&#13;
+.detail-currency-selector {&#13;
+    float: right;&#13;
+    padding:0;&#13;
+}&#13;
+.detail-currency-selector-button {&#13;
+    margin-top: 9px;&#13;
+}&#13;
+.detail-currency-selector-button button{&#13;
+  background-color: #FFF;&#13;
+  color: #000;&#13;
+}&#13;
+.btn.plus, .btn.minus{&#13;
+  background: none;&#13;
+}&#13;
+.detail-currency-selector .btn{&#13;
+  float: left;&#13;
+  height: 40px;&#13;
+  width: 40px;&#13;
+  border: 1px solid #000;&#13;
+  border-radius: 0;&#13;
+  font-size: 15px;&#13;
+  outline: 0;&#13;
+  padding: 0;&#13;
+}&#13;
+.center-align{&#13;
+  text-align: center;&#13;
+}&#13;
+.no-padding{&#13;
+  padding:0;&#13;
+}&#13;
+.new-price-label{&#13;
+  padding: 0 6px;&#13;
+  font-size: 1.8rem;&#13;
+}&#13;
+.product-title {&#13;
+  margin: 0;&#13;
+  line-height: 28px;&#13;
+  font-weight: 600;&#13;
+}&#13;
+.productPrice {&#13;
+   padding: 16px 0;&#13;
+    text-decoration: none;&#13;
+    font-weight: 600;&#13;
+    white-space: nowrap;&#13;
+}&#13;
+.text-uppercase {&#13;
+    text-transform: uppercase;&#13;
+}&#13;
+.product-main-details {&#13;
+  padding: 0 0 0 15px;&#13;
+}&#13;
+.product-details{&#13;
+  float: left;&#13;
+  padding: 40px 0 0 0;&#13;
+}&#13;
+.quantity {&#13;
+    margin-top: 20px;&#13;
+}&#13;
+.quantity-text{&#13;
+font-weight:600;&#13;
+  font-size:16px;&#13;
+}&#13;
+.input-div {&#13;
+    display: inline !important;&#13;
+    position: relative;&#13;
+}&#13;
+.quantity input {&#13;
+    width: 60px;&#13;
+    padding: 6px 0;&#13;
+    border-radius: 16px;&#13;
+    border: 1px solid #cfcfcf;&#13;
+    outline: 0 !important;&#13;
+    margin: 0px;&#13;
+    font-size: 12px;&#13;
+    font-weight: 600;&#13;
+    padding-left: 12px;&#13;
+}&#13;
+.left-in-stock {&#13;
+  padding: 12px 0;&#13;
+    font-size: 1.5rem;&#13;
+    font-weight: 600;&#13;
+}&#13;
+.add-to-cart button {&#13;
+  font-size: 14px;&#13;
+  font-weight: 500;&#13;
+  outline: 0 !important;&#13;
+  box-shadow: none;&#13;
+  padding: 0;&#13;
+  color: #fff;&#13;
+  background-color: #222;&#13;
+  color: #fff;&#13;
+  border: 0;&#13;
+  height: 40px;&#13;
+  border-radius: 25px;&#13;
+  width:100%;&#13;
+  margin:5px;&#13;
+}	&#13;
+.card-product-old-price{&#13;
+  text-decoration: line-through;&#13;
+      font-weight: 100;&#13;
+    color: gray;&#13;
+}&#13;
+.instock{&#13;
+color:green;&#13;
+}&#13;
+.outofstock{&#13;
+color:red;&#13;
+}&#13;
+.flex{&#13;
+display:flex;&#13;
+}&#13;
+@media only screen and (max-width: 991px) {&#13;
+  .detail-image-size{&#13;
+    width: 280px;&#13;
+    height: 280px;&#13;
+  }&#13;
+}&#13;
+&#13;
+///MODAL CSS---------------------------&#13;
+.inputstyle {&#13;
+  background-color: transparent;&#13;
+  border: none;&#13;
+  border-bottom: 1px solid #9e9e9e;&#13;
+  border-radius: 0;&#13;
+  outline: none;&#13;
+  height: 3rem;&#13;
+  width: 100%;&#13;
+  font-size: inherit;&#13;
+  margin: 0 0 20px 0;&#13;
+  padding: 0;&#13;
+  -webkit-box-shadow: none;&#13;
+  box-shadow: none;&#13;
+  -webkit-box-sizing: content-box;&#13;
+  box-sizing: content-box;&#13;
+}&#13;
+.modal-title {&#13;
+  text-align:center;&#13;
+  font-size: 2.5rem;&#13;
+}&#13;
+.modal-header{&#13;
+  border:none;&#13;
+}&#13;
+.modal-footer{&#13;
+  text-align:center;&#13;
+  border-top:none;&#13;
+}&#13;
+.modal-body {&#13;
+  padding: 0 15px;&#13;
+}&#13;
+.tatacss{&#13;
+  color: #005898;&#13;
+  font-weight: 900;&#13;
+}&#13;
+.capitalcss{&#13;
+  color: #145b91;&#13;
+  font-weight: 600;&#13;
+}&#13;
+.phase2text, .phase1text{&#13;
+  color: #1b78e5;&#13;
+  font-size: 2rem;&#13;
+}&#13;
+&#13;
+//////////---------Checkout-------//////////////&#13;
+.bottomline{&#13;
+  border-bottom: 2px solid #dcdcdc;&#13;
+  padding-bottom: 6px;&#13;
+}&#13;
+.checkout-image-size{&#13;
+  width: 170px;&#13;
+  height: 170px;&#13;
+}&#13;
+.checkout{&#13;
+  display:flex;&#13;
+  padding-top: 6px;&#13;
+}&#13;
+.checkout button{&#13;
+	padding: 0 8px;&#13;
+}&#13;
+.checkout input{&#13;
+  width:45px;&#13;
+  padding-left: 12px;&#13;
+}&#13;
+.checkout-total{&#13;
+  padding-top: 6px;&#13;
+}&#13;
+.payemt-title{&#13;
+	&#13;
+  font-weight:800;&#13;
+}&#13;
+.payemt-title-note{&#13;
+	 font-weight: normal;&#13;
+   padding-top: 5px;&#13;
+   padding-bottom: 5px;&#13;
+ &#13;
+}&#13;
+.creditcart{&#13;
+  display:flex;&#13;
+   padding-bottom: 5px;&#13;
+}&#13;
+.creditcart .radio {&#13;
+  &#13;
+  width:10px;&#13;
+  height:10px;&#13;
+  border-radius: 50%;&#13;
+  background-color: #000;&#13;
+}&#13;
+.creditcart .credittext{&#13;
+  &#13;
+    padding-left: 6px;&#13;
+    padding-top: 4px;&#13;
+ &#13;
+}&#13;
+.payemtpadding{&#13;
+  padding-bottom:12px;&#13;
+}&#13;
+.payement-box-svg{&#13;
+  margin-top: -26px;&#13;
+  float: right;&#13;
+  padding-right: 10px;&#13;
+}&#13;
+.rememberme{&#13;
+  font-size: 2rem;&#13;
+  font-weight: 600;&#13;
+}&#13;
+.completeorder{&#13;
+  background-color:#000;&#13;
+  color:#FFF;&#13;
+  padding: 14px 24px;&#13;
+  width: 100%;&#13;
+}&#13;
+.emi-title{&#13;
+font-size: 2rem;&#13;
+  font-weight: 500;&#13;
+  color:grey;&#13;
+}&#13;
+&#13;
+/////////////------Loading idicators css----////////////////////////&#13;
+.titan-loader-overlay {&#13;
+  position: fixed;&#13;
+  top: 0;&#13;
+  right: 0;&#13;
+  bottom: 0;&#13;
+  left: 0;&#13;
+  z-index: 999991;&#13;
+  overflow: hidden;&#13;
+  -webkit-overflow-scrolling: touch;&#13;
+  outline: 0;&#13;
+  display:block;&#13;
+}&#13;
+.titan-loader{&#13;
+  z-index: 999992;&#13;
+  position: relative;&#13;
+  background-image: url('loader.gif');&#13;
+  width: 56px;&#13;
+  height: 50px;&#13;
+  top: 50%;&#13;
+  left: 50%;&#13;
+}&#13;
+&#13;
+.btn-blue{&#13;
+  color:#FAF7F5;&#13;
+  background-color:#2986B7;&#13;
+}&#13;
+.btn-blue:hover{&#13;
+  color:#FAF7F5;&#13;
+  background-color:#35a1da;&#13;
+}&#13;
+&#13;
+	.totalrow{&#13;
+		padding-top: 0.5rem;&#13;
+		padding-bottom: 0;&#13;
+		&#13;
+	}&#13;
+	.total-last-row{&#13;
+		padding-top: 0.5rem;&#13;
+		border-bottom: 1px solid #000;&#13;
+		padding-bottom: 0.5rem;&#13;
+	}&#13;
+	&#13;
+	.total-row-heading{&#13;
+		font-weight: 800;&#13;
+    text-align:right;&#13;
+	}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>gifting_new</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Gifting New</name>
+        <option_schema>[{"name":"display","section":"other","default_value":"Gifting","label":"Display","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var pageId = $sp.getParameter("id");
+	if (pageId == "titan_products"){
+		data.menuHeader = "Products";
+	}
+	else{
+		data.menuHeader = "Gifting";
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>digu</sys_created_by>
+        <sys_created_on>2020-05-01 02:34:55</sys_created_on>
+        <sys_id>5dad8334dbac1010730a7b3868961995</sys_id>
+        <sys_mod_count>75</sys_mod_count>
+        <sys_name>Gifting New</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_5dad8334dbac1010730a7b3868961995</sys_update_name>
+        <sys_updated_by>Nishi</sys_updated_by>
+        <sys_updated_on>2020-05-05 06:54:19</sys_updated_on>
+        <template><![CDATA[<div class="container-fluid products">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+      <widget id="gifting_menu" options="{display:data.menuHeader}"></widget>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
+       <widget id="gifting_content"></widget>
+  </div>
+</div>
+
+<!------Loading indicators------->
+<div ng-if="c.showTitanLoader">
+  <div class="titan-loader-overlay" >
+    <div class="titan-loader">
+    </div>
+  </div>  
+</div>
+
+<!------Loading indicators------->
+]]></template>
+    </sp_widget>
+</record_update>

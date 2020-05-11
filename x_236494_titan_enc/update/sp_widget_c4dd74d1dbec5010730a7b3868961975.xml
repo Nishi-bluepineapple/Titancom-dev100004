@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+	var c = this;
+	c.data.points = {
+		series:["Loyalty Points"],
+		labels: [
+			new Date(2019,1,1)
+			,new Date(2019,2,1)
+			,new Date(2019,3,1)
+			,new Date(2019,4,1),new Date(2019,5,1),new Date(2019,6,1)
+			,new Date(2019,7,1),new Date(2019,8,1),new Date(2019,9,1)
+			,new Date(2019,10,1),new Date(2019,11,1),new Date(2019,12,1)
+],
+		data: [[
+		//	500, 750, 750, 1250, 1250, 1000, 1500, 900, 900, 1050, 1750, 2000
+			{x: new Date(2019,1,12), y: 500},
+{t: new Date(2019,2,17), y: 700},
+{t: new Date(2019,3,21), y: 900},
+{t: new Date(2019,4,7), y: 1120},
+{t: new Date(2019,5,11), y: 950},
+{t: new Date(2019,6,10), y: 1000},
+{t: new Date(2019,7,19), y: 820},
+{t: new Date(2019,8,23), y: 720},
+{t: new Date(2019,9,27), y: 890},
+{t: new Date(2019,10,5), y: 1100},
+{t: new Date(2019,11,7), y: 1200},
+{t: new Date(2019,12,7), y: 1000}
+
+			
+		]]
+	};
+	
+	c.opt = {
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    unit: 'month'
+                }
+            }]
+        }
+    };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>dtrial</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>trial</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script/>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>digu</sys_created_by>
+        <sys_created_on>2020-05-02 05:23:29</sys_created_on>
+        <sys_id>c4dd74d1dbec5010730a7b3868961975</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>trial</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_c4dd74d1dbec5010730a7b3868961975</sys_update_name>
+        <sys_updated_by>digu</sys_updated_by>
+        <sys_updated_on>2020-05-02 06:19:50</sys_updated_on>
+        <template><![CDATA[
+  <canvas id="points" class="chart chart-line" chart-data="data.points.data" 
+                      chart-series="data.points.series" chart-labels= "data.points.labels" chart-options="opt"
+          style="width:400px; height:300px;">
+  </canvas>
+]]></template>
+    </sp_widget>
+</record_update>

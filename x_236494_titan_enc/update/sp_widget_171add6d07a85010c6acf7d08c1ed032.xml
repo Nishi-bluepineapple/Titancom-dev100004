@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	
+	console.log(c.data.page_id);
+	if(c.data.page_id == '70aadb2d07209010c6acf7d08c1ed006'){
+		c.data.showCustomer = "true"; 
+		console.log("customer forum : " + c.data.showCustomer);
+	}
+	if(c.data.page_id == '1cca1b2d07209010c6acf7d08c1ed05d'){
+		c.data.showfeedback = "true"; 
+		console.log("customer forum : " + c.data.showfeedback);
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.banner img:first-child {  &#13;
+  width: 100%;&#13;
+  height: auto;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>community_forum_banner</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Forum-Banner</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+data.page_id = $sp.getParameter('sys_id');
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 02:06:30</sys_created_on>
+        <sys_id>171add6d07a85010c6acf7d08c1ed032</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Forum-Banner</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_171add6d07a85010c6acf7d08c1ed032</sys_update_name>
+        <sys_updated_by>Nishi</sys_updated_by>
+        <sys_updated_on>2020-05-04 13:33:42</sys_updated_on>
+        <template><![CDATA[<div>
+   <div class = "banner" ng-if="c.data.showCustomer">
+      <img src="CustomerBanner.png">
+   </div>
+  <div class = "banner" ng-if="c.data.showfeedback">
+      <img src="FeedbackBanner.png">
+   </div>
+   <a href="?id=community_forum&sys_id=70aadb2d07209010c6acf7d08c1ed006"><img src="customer_bag.png" width = '115px' height = '200px' style = 'float:right;padding-top:50px;padding-bottom:25px;'></a>
+   <a href="?id=community_forum&sys_id=1cca1b2d07209010c6acf7d08c1ed05d"> <img src="feedback_bag.png" width = '117px' height = '200px' style = 'float:right;padding-top:50px;padding-bottom:25px;'></a>
+</div>]]></template>
+    </sp_widget>
+</record_update>

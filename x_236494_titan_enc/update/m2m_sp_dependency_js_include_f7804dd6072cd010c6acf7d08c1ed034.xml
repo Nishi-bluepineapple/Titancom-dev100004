@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_dependency display_value="Google Charts">59404dd6072cd010c6acf7d08c1ed02b</sp_dependency>
+        <sp_js_include display_value="https://www.gstatic.com/charts/loader.js">0570cdd6072cd010c6acf7d08c1ed0a8</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-05 08:09:24</sys_created_on>
+        <sys_id>f7804dd6072cd010c6acf7d08c1ed034</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Google Charts.https://www.gstatic.com/charts/loader.js</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_f7804dd6072cd010c6acf7d08c1ed034</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-05 08:09:24</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+</record_update>

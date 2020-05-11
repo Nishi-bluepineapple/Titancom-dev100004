@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.seller-finance{&#13;
+	background-color:#363535;&#13;
+  color:#FFFFFF;&#13;
+	font-size:2.5rem;&#13;
+}&#13;
+&#13;
+.seller-finance-text{&#13;
+	margin-top:60px;&#13;
+}&#13;
+&#13;
+&#13;
+.seller-finance-btn{&#13;
+  background-color:#F6E630;&#13;
+ 	color:#000000;&#13;
+  font-size:3rem; &#13;
+  border-radius:5px;&#13;
+  border:5px;&#13;
+  width:200px;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>flipkart_seller_home</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Flipkart Seller Home</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>snc_external</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+data.username=gs.getUserDisplayName();
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-04 08:48:49</sys_created_on>
+        <sys_id>e3ffbfbd07ac9010c6acf7d08c1ed0c8</sys_id>
+        <sys_mod_count>43</sys_mod_count>
+        <sys_name>Flipkart Seller Home</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_e3ffbfbd07ac9010c6acf7d08c1ed0c8</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-06 07:22:26</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+  
+  <div class="row seller-finance">
+    <div class="col-md-6" >
+         <img src="Seller%20Finance%20Banner-col1.png" height="490px"/>
+    </div>
+    <div class="col-md-3 seller-finance-text">
+        Hi {{data.username}}! 
+        Did you know you are eligible 
+        for a finance offer of up to 
+        Rs. 1,00,000/- <br/><br/><br/>
+			<button class="seller-finance-btn">
+        Avail Now!
+      </button>
+    </div>
+  
+    <div class="col-md-3" >
+         <img src="Seller%20Finance%20Banner-col3.png" height="490px" />
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+<img src="Seller%20top%203.png"  height="490px" style="
+    padding-top: 10px;
+"/>     
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <img src="SellerBigBillion.png" width="1140px"/>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <img src="SellerCommunityStats.png" width="100%" />
+    </div>
+    <div class="col-md-6" align="center">
+      <div style="
+    width: 400px;
+    padding-top: 25px;
+">
+        <widget id="leaderboard"></widget>
+      </div></div>
+  </div>
+              
+</div>]]></template>
+    </sp_widget>
+</record_update>

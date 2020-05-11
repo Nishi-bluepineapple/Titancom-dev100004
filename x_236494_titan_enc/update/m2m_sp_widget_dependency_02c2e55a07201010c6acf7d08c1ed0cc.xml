@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="Google Charts">59404dd6072cd010c6acf7d08c1ed02b</sp_dependency>
+        <sp_widget display_value="Visitor Chart">2731c51a072cd010c6acf7d08c1ed03d</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-05 10:38:55</sys_created_on>
+        <sys_id>02c2e55a07201010c6acf7d08c1ed0cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Google Charts.Visitor Chart</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_02c2e55a07201010c6acf7d08c1ed0cc</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-05 10:38:55</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawMaterial);
+      function drawChart() {
+	
+	var cdata = google.visualization.arrayToDataTable(c.data.chartData);
+		  var options = {
+			  title: '',
+			  hAxis: {title: 'Month',  titleTextStyle: {color: '#333'}},
+			  vAxis: {minValue: 0},
+			  pointSize:5,
+				legend:'top',
+				 width: 700,
+				height: 300,
+				curveType:'function'
+		  };
+
+		  var chart = new google.visualization.LineChart(document.getElementById('sales_chart_div'));
+		  chart.draw(cdata, options);
+			
+	  }
+	function drawMaterial() {
+
+		 var data = google.visualization.arrayToDataTable([
+        ['Product', 'New Visitors', 'Returning Visitors' ],
+       ['Smart Phones',21000,8000],
+       ['Headsets',32800,9000],
+       ['Smart Watches',21500,29000]
+      ]);
+     
+var options = {
+        width: 600,
+        height: 200,
+        legend:{ position: 'bottom', alignment: 'end' },
+        bar: { groupWidth: '10%' },
+        isStacked: true
+      };
+      
+
+      var materialChart = new google.charts.Bar(document.getElementById('visitor_chart_div'));
+      materialChart.draw(data,google.charts.Bar.convertOptions( options));
+			drawMaterial2();
+}
+	
+	function drawMaterial2() {
+
+		 var data = google.visualization.arrayToDataTable([
+        ['Area', 'Smartphones', 'Headsets','Smartwatches' ],
+       ['Pune',30000,25000,21000],
+       ['Mumbai',51000,34000,29000],
+       ['Nashik',22000,18000,17000],
+	   ['Kolhapur',16000,13000,9000]
+      ]);
+     
+var options = {
+        width: 600,
+        height: 200,
+        legend:{ position: 'bottom', alignment: 'end' },
+        bar: { groupWidth: '75%' }
+        
+      };
+      /*
+      var options = {
+     
+        title: 'User Comparison',
+        hAxis: {
+        
+         title:'Product Category'
+        },
+        vAxis: {
+          title: 'No of Visitors'
+        },
+        isStacked: 'percent'
+      };*/
+
+      var materialChart = new google.charts.Bar(document.getElementById('region_wise_sale_chart'));
+      materialChart.draw(data, google.charts.Bar.convertOptions( options));
+}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>total_sales</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Total Sales</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	function mnthyr(x){
+var m_yr= x.split('/');
+
+ var month=['Jan','Feb','Mar','Apr','May','June','Jul','Aug','Sep','Oct','Nov','Dec'];
+ return month[m_yr[0]-1] + '-' + m_yr[1].substring(2);
+}
+var chartData=[];
+var arr_Months=[];
+chartData.push( ['Month', 'Smartphones', 'Headphones','Smartwatches']);
+var agg_result={};
+
+	var txnsAgg = new GlideAggregate('x_236494_titan_enc_sale_transactions');
+
+//amount, product_category, transaction_date
+
+txnsAgg.addTrend ('transaction_date','Month');
+
+txnsAgg.addAggregate('count');
+txnsAgg.addAggregate('sum', 'amount');
+//txnsAgg.addQuery("transaction_date", "<", "2019-05-01"); 
+txnsAgg.groupBy('product_category');
+txnsAgg.orderBy('timeref');
+txnsAgg.orderBy('product_category');
+	
+txnsAgg.query();
+while (txnsAgg.next()) {
+	var month_yr = mnthyr(txnsAgg.getValue('timeref'));
+	
+	if(agg_result[month_yr]==null)
+	{
+		agg_result[month_yr]={};
+		arr_Months.push(month_yr);
+	}
+	agg_result[month_yr][txnsAgg.product_category]= txnsAgg.getAggregate('sum', 'amount');
+/*   gs.info('Transactions in Product Category '
++ txnsAgg.product_category
++ ' count = '
++ txnsAgg.getAggregate('count')
++' sum = '
++ txnsAgg.getAggregate('sum', 'amount')
++ 'for '
++ txnsAgg.getValue('timeref'));*/
+}
+	
+for(var v_month in arr_Months)
+{
+	var agg_result_month=agg_result[arr_Months[v_month]];
+	chartData.push([arr_Months[v_month],
+								 parseInt(agg_result_month['Smartphones']),
+								 parseInt(agg_result_month['Headsets']),
+								 parseInt(agg_result_month['Smartwatches'])]
+								);
+	
+}
+	gs.info('chartData ::'+chartData);
+	data.chartData=chartData;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-05 08:07:22</sys_created_on>
+        <sys_id>461001d6072cd010c6acf7d08c1ed00b</sys_id>
+        <sys_mod_count>105</sys_mod_count>
+        <sys_name>Total Sales</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_461001d6072cd010c6acf7d08c1ed00b</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-05 13:32:23</sys_updated_on>
+        <template><![CDATA[<div class="container">
+
+<div class="row">
+  <div class="col-md-8">
+    
+  
+  
+      
+      <h2>
+        My Flipkart Membership
+      </h2>
+      <img src="TopStats.png" width="100%"/>
+    
+  
+  
+    <h3>
+    Total Sales
+  </h3>
+    <div id="sales_chart_div" ></div>
+
+        <h3>
+    User Comparison
+  </h3>
+    <div id="visitor_chart_div" ></div>
+ 
+        <h3>Region wise sale</h3>
+  <div id="region_wise_sale_chart" ></div>
+      
+  
+    
+     
+<!-- your widget template -->
+  
+      
+
+   
+    </div>
+  <div class="col-md-4">
+   
+    <widget id="financing_offers_widget"></widget>
+    <widget id="leaderboard"></widget>
+   
+  </div>
+  </div>
+    
+</div>]]></template>
+    </sp_widget>
+</record_update>

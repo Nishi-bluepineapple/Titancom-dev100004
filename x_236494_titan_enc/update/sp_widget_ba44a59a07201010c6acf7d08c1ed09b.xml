@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawMaterial);
+
+function drawMaterial() {
+
+		 var data = google.visualization.arrayToDataTable([
+        ['Area', 'Smartphones', 'Headsets','Smartwatches' ],
+       ['Pune',30000,25000,21000],
+       ['Mumbai',51000,34000,29000],
+       ['Nashik',22000,18000,17000],
+	   ['Kolhapur',16000,13000,9000]
+      ]);
+     
+var options = {
+        width: 600,
+        height: 400,
+        legend: { position: 'top', maxLines: 3 },
+        bar: { groupWidth: '75%' },
+        isStacked: true
+      };
+      /*
+      var options = {
+     
+        title: 'User Comparison',
+        hAxis: {
+        
+         title:'Product Category'
+        },
+        vAxis: {
+          title: 'No of Visitors'
+        },
+        isStacked: 'percent'
+      };*/
+
+      var materialChart = new google.charts.Bar(document.getElementById('region_wise_sale_chart'));
+      materialChart.draw(data, options);
+}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>region_wise_sale</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Region wise sale</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-05 10:46:41</sys_created_on>
+        <sys_id>ba44a59a07201010c6acf7d08c1ed09b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Region wise sale</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_ba44a59a07201010c6acf7d08c1ed09b</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-05 10:57:06</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+  <h2>Region wise sale</h2>
+  <div id="region_wise_sale_chart" style=" height: 300px; width: 300px;"></div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

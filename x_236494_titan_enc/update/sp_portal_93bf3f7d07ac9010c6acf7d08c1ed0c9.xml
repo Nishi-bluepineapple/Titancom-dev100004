@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables>$brand-primary:#2874f0;
+$body-bg:#fff;
+$state-success-text:#5cb85c;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#2874f0;
+$sp-navbar-height:100px;
+$text-color:#000000;
+$sp-logo-margin-y:.5rem;
+$navbar-inverse-link-hover-color:#FFFFFF;
+$panel-bg:#fff;
+$brand-success:#717171;
+$navbar-inverse-bg:#2874f0;
+$brand-warning:#f0ad4e;
+$brand-danger:#d9534f;
+$sp-tagline-color:#717171;
+$navbar-inverse-link-color:#FFFFFF;
+$brand-info:#5bc0de;
+$link-color:#000000;
+$sp-logo-margin-x:15px;
+$btn-default-bg:#fff;
+$text-muted:#cbcbcb;
+
+</css_variables>
+        <default>false</default>
+        <homepage display_value="flipkart_seller_home">6192f4060760d010c6acf7d08c1ed076</homepage>
+        <icon>b3afc221076c5010c6acf7d08c1ed0aa</icon>
+        <kb_knowledge_base/>
+        <kb_knowledge_page display_value="flipkart_knowledge_base">b0e5fcf6db945810730a7b38689619f5</kb_knowledge_page>
+        <login_page display_value="flipkart_seller_login">d044a1a6072c1010c6acf7d08c1ed0de</login_page>
+        <logo>56af8eed072c5010c6acf7d08c1ed0ed</logo>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sqanda_knowledge_base display_value="Customer Service">05ff44289f011200550bf7b6077fcfa3</sqanda_knowledge_base>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-04 08:47:42</sys_created_on>
+        <sys_id>93bf3f7d07ac9010c6acf7d08c1ed0c9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Flipkart Seller Community</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_portal_93bf3f7d07ac9010c6acf7d08c1ed0c9</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-06 05:26:14</sys_updated_on>
+        <theme display_value="Flipkart Seller Community">9a3e3b7d07ac9010c6acf7d08c1ed051</theme>
+        <title>Flipkart Seller Community</title>
+        <ts_index_group/>
+        <url_suffix>flipkart_seller</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=93bf3f7d07ac9010c6acf7d08c1ed0c9"/>
+</record_update>

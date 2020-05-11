@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format>png</format>
+        <height>16</height>
+        <image>8edc4fed07ec5010c6acf7d08c1ed00d</image>
+        <name>coin.png</name>
+        <size_bytes>624</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 10:26:41</sys_created_on>
+        <sys_id>15ccc32107209010c6acf7d08c1ed029</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>coin.png</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>db_image_15ccc32107209010c6acf7d08c1ed029</sys_update_name>
+        <sys_updated_by>Nishi</sys_updated_by>
+        <sys_updated_on>2020-05-03 10:26:52</sys_updated_on>
+        <thumbnail/>
+        <width>16</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#ffffff</average_image_color>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <encryption_context/>
+        <file_name>image</file_name>
+        <hash>030f5051ac098880194aa1915b43e890477fedc489acd1c45708757b6c550dff</hash>
+        <image_height>16</image_height>
+        <image_width>16</image_width>
+        <size_bytes>624</size_bytes>
+        <size_compressed>647</size_compressed>
+        <state>available</state>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 10:26:52</sys_created_on>
+        <sys_id>8edc4fed07ec5010c6acf7d08c1ed00d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>Nishi</sys_updated_by>
+        <sys_updated_on>2020-05-03 10:26:52</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>15ccc32107209010c6acf7d08c1ed029</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="8edc4fed07ec5010c6acf7d08c1ed00d">8edc4fed07ec5010c6acf7d08c1ed00d</sys_attachment>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 10:26:52</sys_created_on>
+        <sys_id>cedc4fed07ec5010c6acf7d08c1ed00d</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>AXACj/2JUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAI3SURBVDgRrcFNSJNxHMDx7///PPOZzrJMU2I4FFpCdDC6zCAvRV704gsRBSXU3UMI0VHoOA9dIhkRCSnorUtdgl4mZPaCmC/MJCWUcjSrzaft+f96bBki3urz4V8pdojFUL09RHHpABooWsBhNJ5gLplE2E04DF1tRCTFsJnWOW/CkcLzUikk94s3uUfMtM5JiuGuNiLhMH9Z/HG2hcjILeImXdJpVkttL12CZAOoyvOYlSXku2ejOdrd6UXGXzM+PUcGn8IXi6Fe3OeB+VrSXVgu47dABdaRPihk8Wb62WKHs+h9P0eaL3AumUQ0vt4eouLqdrPmsMWqv4pVdxHz5RnbmTUHcXV7bw9RfJpNLh2SDQRNzgIriK6/gtV4HewQaAtV3YKqOgVODSZnIdlAEJcOfDZFDeJqNqmDp7Gi1yhS2MfvgFIgBvNhEG/2JuJqfA34bHZQ5Ychn0EKP0BpVFkdm2RjBfN1kp1silLKMaDALCaQ1cegLLBDBE4+BATvfT/y+QkoUI7Bl8Kn2eQwqkL5nA56kM8g61NI5i3KLof8OoWpG5ilITAuutRDhfI5HEbxaXzxBPPKMWO6eoPt1IFmvIXbmI/32KKrNlCOGYsnmMdn4VtehkdPGW89Y2oqqr1jFLRC7QUVxCwOonDRZR7WoZx8yuaHWi/Tl3zJN3aKNVErKQZkVqfNu1LxXoXEm3DEvAmIzOq0pBiINVHLNopd9F4iGDtBI1BJUTo5wUz8Lhv8b78ArgrnBL5v0k0AAAAASUVORK5CYII4XQFLcAIAAA==</data>
+        <length>852</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="8edc4fed07ec5010c6acf7d08c1ed00d">8edc4fed07ec5010c6acf7d08c1ed00d</sys_attachment>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 10:26:52</sys_created_on>
+        <sys_id>42dc4fed07ec5010c6acf7d08c1ed00e</sys_id>
+    </sys_attachment_doc>
+</record_update>

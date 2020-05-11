@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#myModal .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+  width:400px;
+    margin: 0 auto;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>trial-window</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Nishi</sys_created_by>
+        <sys_created_on>2020-05-03 10:08:58</sys_created_on>
+        <sys_id>80c84f2d07ec5010c6acf7d08c1ed014</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>trial-window</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_widget_80c84f2d07ec5010c6acf7d08c1ed014</sys_update_name>
+        <sys_updated_by>Nishi</sys_updated_by>
+        <sys_updated_on>2020-05-03 11:21:11</sys_updated_on>
+        <template><![CDATA[
+       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a href="#myModal" data-toggle="modal"><img src="plusmember_logo.png" width="316px" height="200px" style="padding:10px;"></a>
+        </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b class="modal-title" style="font-size:20px">Flipkart SuperCoins</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="coin" style="padding-bottom:10px;">
+                  <img src="coin.png">Earn SuperCoins on Flipkart orders
+              </div>
+              <div class="secondLine" style="padding-left:18px;padding-bottom:10px;">
+               <b> How do I earn SuperCoins?</b>
+              </div>
+              <div class="linethree" style="padding-left:18px;padding-bottom:10px;">
+                <b>Shop for ₹100 = Earn 2 SuperCoins</b>
+              </div>
+              <div class="linefour" style="padding-left:18px;" >
+                "Max 50 SuperCoins per order. SuperCoins are credited after the return period is over for all the products in the order"
+              </div>
+            </div>
+          <div>
+                <img src="offerimage.png" width="397">
+              </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

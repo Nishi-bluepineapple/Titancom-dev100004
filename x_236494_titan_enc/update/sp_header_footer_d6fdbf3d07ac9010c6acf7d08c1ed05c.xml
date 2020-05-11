@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($document, $scope, spUtil, $rootScope, $timeout, spAriaUtil, spGtd, $window) {
+	/* widget controller */
+	var c = this;
+	$scope.collapse = function() {
+		$rootScope.$emit('sp-navbar-collapse');
+	}
+	
+	c.getUrlParam = function(param) {
+		var toggleClassDom = $document[0].getElementsByClassName('toggleClass');
+		for(var i=0; i<toggleClassDom.length;i++){
+			if(toggleClassDom[i].id == param) {
+				toggleClassDom[i].classList.add('active');
+			} else {
+				toggleClassDom[i].classList.remove('active');
+			}
+		}
+	}
+	var urlParams = {};
+	var searchurl = window.location.search;
+	var parts = searchurl.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		urlParams[key] = value;
+	});
+	if(Object.keys(urlParams).length != 0) {
+		if(urlParams.hasOwnProperty('paramid')) {
+			c.getUrlParam(urlParams.paramid);
+		}
+	}
+
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.titan-container a{&#13;
+	color:#FFFFFF;&#13;
+  text-decoration:none;&#13;
+}&#13;
+&#13;
+header.ng-scope{&#13;
+	height:100px!important;&#13;
+}&#13;
+.titan-container a span.active, .dropdown-menu &gt; li &gt; a span.active{&#13;
+	font-weight:700;&#13;
+}&#13;
+.center-align {&#13;
+  text-align:center;&#13;
+}&#13;
+.titan-container {&#13;
+  padding:0;&#13;
+}&#13;
+.menuicon{&#13;
+  float:right;&#13;
+}&#13;
+.uppercase {&#13;
+	text-transform:uppercase;&#13;
+}&#13;
+.remove-float {&#13;
+	float:none;&#13;
+}&#13;
+.header-item {&#13;
+  font-size: 1.5rem;&#13;
+  font-weight: 500;&#13;
+  white-space: nowrap;&#13;
+}&#13;
+.navbar{&#13;
+	height:60px;&#13;
+}&#13;
+.navbar.titan-navbar {&#13;
+  background-color: #2874F0;&#13;
+  line-height: 60px;&#13;
+  border-radius:0;&#13;
+  height:60px;&#13;
+  /*max-height: 60px;*/&#13;
+  margin: 0;&#13;
+}&#13;
+.dropdown-menu {&#13;
+  box-shadow:none;&#13;
+  border:none;&#13;
+  margin: 1px 0px;&#13;
+  border-radius: 0px;&#13;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);&#13;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);&#13;
+}&#13;
+.dropdown-menu &gt; li &gt; a {&#13;
+  padding: 12px 16px;&#13;
+  font-size: 1.3rem;&#13;
+  color:black&#13;
+}&#13;
+&#13;
+.zoom {&#13;
+  transition: transform .2s;&#13;
+}&#13;
+.icons-size {&#13;
+  font-size: 2rem;&#13;
+}&#13;
+.titan-logo{&#13;
+	width:32px;&#13;
+  height:auto;&#13;
+}&#13;
+.zoom:hover {&#13;
+  transform: scale(1.2);&#13;
+}&#13;
+.loggedin-user-img{&#13;
+	width:4rem;&#13;
+  height:4rem;&#13;
+  border-radius: 50%;&#13;
+  vertical-align: middle;&#13;
+  margin-top: -10px;&#13;
+}&#13;
+.loggedin-user-title{&#13;
+	font-size:1.8rem;&#13;
+}&#13;
+&#13;
+.plus{&#13;
+	color:#F6E630;&#13;
+}&#13;
+&#13;
+.subheader{&#13;
+  line-height: 40px;&#13;
+  color: #707070;&#13;
+  background: white;&#13;
+}&#13;
+&#13;
+.dropdown_menu_fk a{&#13;
+  color: black;&#13;
+  font-size: 1rem;&#13;
+}&#13;
+&#13;
+&#13;
+/*********************Media Query Classes **********************/&#13;
+@media only screen and (max-width: 600px) {&#13;
+  .hide-on-small-only, .hide-on-small-and-down {&#13;
+    display: none !important;&#13;
+  }&#13;
+  .header-item {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+  .loggedin-user-title{&#13;
+    font-size:1.5rem;&#13;
+  }&#13;
+  .loggedin-user-img{&#13;
+    width:3rem;&#13;
+    height:3rem;&#13;
+    margin-top: -10px;&#13;
+  }&#13;
+  .icons-size {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (max-width: 992px) {&#13;
+  .hide-on-med-and-down {&#13;
+    display: none !important;&#13;
+  }&#13;
+  .header-item {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+  .loggedin-user-title{&#13;
+    font-size:1.5rem;&#13;
+  }&#13;
+  .loggedin-user-img{&#13;
+    width:3rem;&#13;
+    height:3rem;&#13;
+    margin-top: -10px;&#13;
+  }&#13;
+  .icons-size {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (min-width: 600px) and (max-width: 992px) {&#13;
+  .hide-on-med-only {&#13;
+    display: none !important;&#13;
+  }&#13;
+  .header-item {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+  .loggedin-user-title{&#13;
+    font-size:1.5rem;&#13;
+  }&#13;
+  .icons-size {&#13;
+    font-size: 1.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (min-width: 601px) {&#13;
+  .hide-on-med-and-up {&#13;
+    display: none !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media only screen and (min-width: 993px) {&#13;
+  .hide-on-large-only {&#13;
+    display: none !important;&#13;
+  }&#13;
+  .row .col-md-5half {&#13;
+    width: 45.8333333334%;&#13;
+    margin-left: auto;&#13;
+    left: auto;&#13;
+    right: auto;&#13;
+  }&#13;
+  &#13;
+}&#13;
+@media only screen and (min-width: 1201px) {&#13;
+  .row .col-lg-5half {&#13;
+    width: 45.8333333334%;&#13;
+    margin-left: auto;&#13;
+    left: auto;&#13;
+    right: auto;&#13;
+  }&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>flipkart_seller_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Flipkart Seller Header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.userLoggedIn = gs.isLoggedIn();
+	if(!data.userLoggedIn){
+		var menu_id = $sp.getParameter("m");
+		if (!menu_id)
+			menu_id="k";
+
+		data.menuSelected = menu_id;
+	}
+	else{
+		var titanUtils = new TitanUtils();
+		data.menuitems = titanUtils.getMenuItems();
+/*		data.menuitems = [
+			{html:"Picking",href:"?d=picking"},
+			{html:"Kicking",href:"?d=kicking"},
+			{html:"Ticking",href:"?d=ticking"}
+			
+		];
+*/		data.userPhoto=titanUtils.getUserPhoto(gs.getUserID());
+		var gUser = gs.getUser();
+		data.salutation = "Hi "+gUser.getFirstName();
+		
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>Neel</sys_created_by>
+        <sys_created_on>2020-05-04 08:40:00</sys_created_on>
+        <sys_id>d6fdbf3d07ac9010c6acf7d08c1ed05c</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Flipkart Seller Header</sys_name>
+        <sys_package display_value="Titan Encircle" source="x_236494_titan_enc">fd74bb58db109010730a7b386896199e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Titan Encircle">fd74bb58db109010730a7b386896199e</sys_scope>
+        <sys_update_name>sp_header_footer_d6fdbf3d07ac9010c6acf7d08c1ed05c</sys_update_name>
+        <sys_updated_by>Neel</sys_updated_by>
+        <sys_updated_on>2020-05-06 05:37:17</sys_updated_on>
+        <template><![CDATA[<div class="container-fluid titan-container">
+  <!-- Loggedin User Start-->
+
+  <div  class="navbar titan-navbar">
+    <div class="row" style="width: 100%;">
+      	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 center-align">
+            <div class="header-menu-item nav navbar-nav menuicon" uib-dropdown on-toggle="toggled(open)" style="color:black"> 
+              <a href id="simple-dropdown" uib-dropdown-toggle>
+                <span style="font-size:3rem;"><fa class="fas fa-bars"></fa></span>
+              </a>
+              <ul uib-dropdown-menu aria-labelledby="simple-dropdown" >
+                <li >
+                  <a role="menuitem"  ng-href="?id=seller_dashboard" ng-click="c.getUrlParam('productsid')" > 
+                    <span class="uppercase  toggleClass" id="productsid">Dashboard</span>
+                  </a>
+                </li >
+               
+               
+              
+                <li style="color:black">
+                  <a ng-href="#" ng-click="c.getUrlParam('customerfid')" class="dropdown_menu_fk">
+                    <span class="uppercase toggleClass" id="customerfid">Products</span>
+                    </a>
+                </li>
+                <li style="color:black">
+                  <a ng-href="?id=csm_my_lists&table=sn_customerservice_case&view=css&sel=all" ng-click="c.getUrlParam('mycasesid')" class="dropdown_menu_fk">
+                    <span class="uppercase toggleClass" id="customerfid">My Cases</span>
+                    </a>
+                </li>
+                 <li style="color:black">
+                  <a ng-href="#" ng-click="c.getUrlParam('feedfid')" class="dropdown_menu_fk">
+                    <span class="uppercase toggleClass" id="feedfid">My Application</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    			<!-- Dropdown menu end-->
+    			<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 center-align">
+            <div class="ng-scope header-menu-item nav navbar-nav remove-float">
+               <a role="menuitem"  ng-href="#"  ng-click="c.getUrlParam('prodselfid')" > 
+                    <span class="uppercase header-item toggleClass" id="prodselfid">Financing</span>
+                  </a>
+              </div>
+    			</div>
+    <!-- Financing end-->
+    		<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 center-align">
+            <div class="ng-scope header-menu-item nav navbar-nav remove-float">
+               <a role="menuitem"  ng-href="#" ng-click="c.getUrlParam('prodselfid')" > 
+                    <span class="uppercase header-item toggleClass" id="prodselfid">Contracts</span>
+                  </a>
+              </div>
+    			</div>
+    <!-- Contracts end-->
+    			<div class="col-xs-4 col-sm-2 col-md-1 col-lg-1 center-align">
+        <div class="ng-scope header-menu-item nav navbar-nav remove-float">
+          <a role="menuitem"  ng-href="/flipkart_seller"  > 
+            <img class="titan-logo zoom" src="Flipkartlogo.jpg">
+          </a>
+        </div>
+    </div>
+    <!-- Logo end-->
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 center-align">
+              <div class="ng-scope header-menu-item nav navbar-nav remove-float">
+                <a role="menuitem"  ng-href="#" ng-Class="{'link-bold':data.menuSelected=='p'}" ng-click="c.getUrlParam('prodselfid')" > 
+                  <span class="uppercase header-item toggleClass" id="prodselfid">Promotion Sale Event</span>
+                </a>
+              </div>
+              <!-- Promo event end-->
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-1 col-lg-1 center-align">
+              <div class="ng-scope header-menu-item nav navbar-nav remove-float">
+                <img src="Search.png" width="20px" style="position: absolute;top: 17px;">
+              </div>
+            </div>
+            <!-- Search end-->
+            <div class="col-xs-5 col-sm-5 col-md-2 col-lg-2" ng-if="data.userLoggedIn">
+            <div class="ng-scope header-menu-item nav navbar-nav">
+              <div class="header-menu-item nav navbar-nav menuicon" uib-dropdown on-toggle="toggled(open)">
+                <a href="javascript:void(0);" id="logout-dropdown" uib-dropdown-toggle>
+                  <span>
+                    <img src="{{::data.userPhoto}}.iix" class="loggedin-user-img">
+                  </span>
+                  <span class="loggedin-user-title">{{::data.salutation}}</span>
+                </a>
+                <ul uib-dropdown-menu aria-labelledby="logout-dropdown">
+                  <li >
+                    <a ng-href="/logout.do?sysparm_goto_url=/flipkart_seller">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    		<!-- Logged in user end-->
+          <div class="col-xs-5 col-sm-5 col-md-2 col-lg-2" ng-if="!data.userLoggedIn">
+            <div class="ng-scope header-menu-item nav navbar-nav">
+              <a ng-href="?id=flipkart_seller_login">
+                <span class="uppercase">Log In</span>
+              </a>
+              <span style="font-size:2rem;color:white;">|</span>
+              <a ng-href="?id=flipkart_registration_form">
+                <span class="uppercase">Sign Up</span>
+              </a>
+            </div>
+          </div>
+        	<!-- Non Logged in user end-->
+      
+      
+
+    </div>
+    
+   
+
+
+  
+</div>]]></template>
+    </sp_header_footer>
+</record_update>
